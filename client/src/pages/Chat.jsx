@@ -7,6 +7,7 @@ import Messages from "../components/Message";
 import "./Chat.css"
 import axios, { AxiosHeaders } from 'axios';
 import ChatBubble from "../components/common/ChatBubble";
+import { Spin } from "antd";
 
 
 
@@ -18,28 +19,27 @@ const Chat = () => {
 
     ]);
     const [inputMessage, setInputMessage] = useState("");
+    const [pageLoad, setPageLoad] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     // const api = axios.create({
     //     baseURL: process.env.REACT_APP_API_URL,
     // });
 
     useEffect(() => {
-      
+
         (async () => {
-            setIsLoading(true)
+            setPageLoad(true)
             const url = 'http://localhost:5000/chat';
             const response = await axios.get(url);
-            // console.log("response", response)
-                setTimeout(() => {  
-                    if(response.data!=400)
-                        setMessages((old) => [...old, { from: "bot", text: response.data }]);
-                       
-                    }, 1000)
-                setIsLoading(false)
-           
+
+            if (response.data != 400) {
+                setMessages((old) => [...old, { from: "bot", text: response.data }]);
+            }
+            setPageLoad(false)
+
 
         })();
-     
+
 
 
     }, [])
@@ -56,9 +56,6 @@ const Chat = () => {
         setMessages((old) => [...old, { from: "me", text: data }]);
         setInputMessage("");
 
-        // setTimeout(() => {
-        //             setMessages((old) => [...old, { from: "bot", text: data }]);
-        //         }, 1000);
 
         const url = 'http://localhost:5000/chat';
         const response = await axios.post(url, { "prompt": `${data}` }
@@ -84,24 +81,30 @@ const Chat = () => {
     };
 
     return (
-        <div className="chatBg">
-            <Flex width="82%" justify="center" align="center" className="chatBox" marginLeft="10%">
-                <Flex flexDirection="column" width="98%" >
-                    <Header />
-                    <Divider />
-                    <Messages messages={messages} isLoading={isLoading} />
-                    <ChatBubble isLoading={isLoading} />
-                    <Divider />
-                    <Footer
-                        inputMessage={inputMessage}
-                        setInputMessage={setInputMessage}
-                        handleSendMessage={handleSendMessage}
-                    />
+
+        <Spin spinning={pageLoad} size={"medium"} >
+
+            <div className="chatBg">
+                <Flex width="82%" justify="center" align="center" className="chatBox" marginLeft="10%">
+                    <Flex flexDirection="column" width="98%" >
+                        <Header />
+                        <Divider />
+                        <Messages messages={messages} isLoading={isLoading} />
+                        <ChatBubble isLoading={isLoading} />
+                        <Divider />
+                        <Footer
+                            inputMessage={inputMessage}
+                            setInputMessage={setInputMessage}
+                            handleSendMessage={handleSendMessage}
+                        />
+                    </Flex>
                 </Flex>
-            </Flex>
 
 
-        </div>
+
+            </div>
+        </Spin>
+
     );
 };
 
