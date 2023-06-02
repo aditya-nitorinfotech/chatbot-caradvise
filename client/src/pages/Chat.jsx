@@ -8,6 +8,9 @@ import "./Chat.css"
 import axios, { AxiosHeaders } from 'axios';
 import ChatBubble from "../components/common/ChatBubble";
 import { Spin } from "antd";
+import CommonHeader from "../components/common/Header";
+import CommonFooter from "../components/common/Footer";
+
 
 
 
@@ -26,6 +29,7 @@ const Chat = () => {
     // });
 
     useEffect(() => {
+        
 
         (async () => {
             setPageLoad(true)
@@ -81,12 +85,14 @@ const Chat = () => {
     };
 
     return (
+        <>
+        {/* <CommonHeader /> */}
 
         <Spin spinning={pageLoad} size={"medium"} >
 
-            <div className="chatBg">
-                <Flex width="82%" justify="center" align="center" className="chatBox" marginLeft="10%">
-                    <Flex flexDirection="column" width="98%" >
+            <div className="chatBg" style={{width:0.95*window.innerWidth,paddingLeft:"5%",paddingRight:"5%"}}>
+                <Flex width={0.85*window.innerWidth} justify="center" align="center" className="chatBox"  flexDirection="column" >
+                    {/* <Flex flexDirection="column" > */}
                         <Header />
                         <Divider />
                         <Messages messages={messages} isLoading={isLoading} />
@@ -97,13 +103,15 @@ const Chat = () => {
                             setInputMessage={setInputMessage}
                             handleSendMessage={handleSendMessage}
                         />
-                    </Flex>
+                    {/* </Flex> */}
                 </Flex>
 
 
 
             </div>
         </Spin>
+        {/* <CommonFooter /> */}
+        </>
 
     );
 };

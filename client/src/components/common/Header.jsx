@@ -1,6 +1,6 @@
-import React, {  useEffect } from 'react'
+import React, { useEffect } from 'react'
 import './Header.css'
-import { Row, Col,  Space,  Typography,  } from 'antd'
+import { Row, Col, Space, Typography, } from 'antd'
 import { Avatar } from 'antd'
 import { NavLink } from 'react-router-dom'
 import logo from "../../logo/logo.png"
@@ -14,7 +14,7 @@ const CommonHeader = () => {
     }, [])
 
     return (
-        <Row align="middle" className="header" style={{ padding: "2%", justifyContent: "center" }}>
+        <Row align="middle" className="header" style={{ padding: "2%", justifyContent: "center"}}>
             <Col flex={1}>
                 <div className="header-title">
                     {/* <Avatar

@@ -6,7 +6,7 @@ import { Avatar } from 'antd'
 
 const { Text } = Typography
 
-const Footer = () => {
+const CommonFooter = () => {
 
     useEffect(() => {
 
@@ -45,4 +45,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default CommonFooter
