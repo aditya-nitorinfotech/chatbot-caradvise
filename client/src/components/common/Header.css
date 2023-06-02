@@ -1,0 +1,158 @@
+/* for select element  */
+.header .selectInHeader.ant-select-single.ant-select-sm:not(.ant-select-customize-input) .ant-select-selector {
+    text-align: left;
+    padding: 0 7px;
+    border-radius: 5px;
+    border-color: #105177;
+    outline: none;
+
+}
+
+/* selected option  */
+.header .ant-select {
+    color: #105177 !important;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+/* for select arrow button */
+.header .selectInHeader .ant-select-arrow .anticon {
+    color: #105177 !important;
+}
+
+/* for select element title */
+.selectElementTitle.ant-typography {
+    font: normal normal 600 14px/21px;
+    height: 18px;
+    color: #105177;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+/* for disable to select organization  */
+.ant-col.disable {
+    opacity: 0.1;
+}
+
+/* userName in heading */
+.headerUserName.ant-typography {
+    color: #585FA9;
+    font: normal normal bold 14px/18px;
+     /* padding-right: 4px; */
+    font-weight: bold;
+}
+
+/* header welcome message */
+.headerWelcomeMsg.ant-typography {
+    color: #2C353D;
+    display: block;
+    margin-top: 8px;
+}
+
+/* for header title */
+.header-title .ant-typography {
+    color: #585FA9;
+    font-size: 18px;
+}
+
+.header-title-2 .ant-typography {
+    color: #2C353D;
+    font-size: 15px;
+}
+
+
+.applyButtonCol {
+    margin-top: 30px;
+}
+
+/* for header row */
+.header.ant-row {
+    /* height:inherit */
+    width: 100%;
+    background-color: #FFF;
+    border: 0.5px solid #D0D3D8;
+}
+
+/* for apply button */
+.header .applyButton.ant-btn-primary {
+    border-radius: 5px;
+    padding: 0 13px;
+    color: black;
+    background: #66C833 0% 0% no-repeat padding-box;
+    border: none;
+    font: normal normal 600 12px/15px Arial !important
+}
+
+/* for header icon and name */
+.header-title {
+    margin-left: 5px;
+    text-align: flex-start;
+    font: normal normal bold 22px/33px Arial !important;
+    letter-spacing: 0px;
+     /* color: #585FA9; */
+    text-transform: uppercase;
+    opacity: 1;
+
+}
+
+
+.header-account-setting {
+    margin-top: 10px;
+    text-align: end;
+    padding-right: 24px;
+    align-items: flex-end;
+}
+
+.ant-col .notificationCol {
+    align-items: flex-end;
+}
+
+@media (max-width: 575.98px) {
+    .header-account-setting {
+         /* margin-top: 0px; */
+        text-align: center;
+        align-items: center;
+         /* background-color: red; */
+    }
+
+    .ant-col .notificationCol {
+
+        align-items: center;
+    }
+
+    .header-title {
+        margin-left: 5px;
+        text-align: center;
+        font: normal normal bold 22px/33px Arial !important;
+        letter-spacing: 0px;
+         /* color: #585FA9; */
+        /* text-transform: uppercase; */
+        opacity: 1;
+
+    }
+
+    .dropDownRow {
+        text-align: center;
+    }
+
+    .header.ant-row {
+         /* height: 10vh; */
+        background-color: #FFF;
+        border: 0.5px solid #D0D3D8;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .applyButtonCol {
+        margin-top: 5px;
+    }
+
+
+    .header .ant-select {
+        color: #105177 !important;
+        font-weight: bold;
+        padding-left: 10px;
+    }
+
+}
